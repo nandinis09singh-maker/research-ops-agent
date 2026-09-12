@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Research Ops Agent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main class="page">
+  <header>
+    <h1>Research Ops Agent</h1>
+    <p class="subtitle">observe · decide · act · evaluate · adapt</p>
+  </header>
+
+  <section class="input-panel">
+    <label for="question" class="sr-only">Research question</label>
+    <textarea
+      id="question"
+      placeholder="What are current approaches to reducing hallucination in RAG systems, and what's still unsolved?"
+    ></textarea>
+    <button id="run-btn" disabled>Run agent</button>
+  </section>
+
+  <p id="empty-state" class="empty-state">
+    Ask a question. The agent plans its own searches, checks what it finds for contradictions,
+    and adapts before it answers.
+  </p>
+
+  <section id="trace-section" class="hidden">
+    <h2 class="section-label">Run trace</h2>
+    <div id="ledger" class="ledger" aria-live="polite"></div>
+  </section>
+
+  <section id="brief-section" class="hidden brief-panel">
+    <div id="brief"></div>
+  </section>
+
+  <section id="claims-section" class="hidden">
+    <details>
+      <summary id="claims-summary">Claims collected</summary>
+      <div id="claims-list"></div>
+    </details>
+  </section>
+
+  <section id="sources-section" class="hidden">
+    <details>
+      <summary id="sources-summary">Sources</summary>
+      <div id="sources-list"></div>
+    </details>
+  </section>
+
+  <section id="stats-section" class="hidden">
+    <details>
+      <summary>Run stats</summary>
+      <pre id="stats"></pre>
+    </details>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
